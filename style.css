@@ -124,7 +124,7 @@ body {
 
 .sources-list { list-style: none; padding: 0; }
 .sources-list li { padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
-.sources-list a { color: var(--accent-2); text-decoration: none; }
+.sources-list a { color: var(--accent-2); text-decoration: none; overflow-wrap: anywhere; }
 .sources-list a:hover { text-decoration: underline; }
 .source-line { margin-top: 12px; font-size: 0.9rem; color: var(--gold); }
 
@@ -161,7 +161,7 @@ body {
 .evidence-table tbody tr:last-child td { border-bottom: none; }
 .evidence-table tbody tr:hover { background: rgba(124,92,255,0.05); }
 .evidence-table td { color: var(--muted); }
-.evidence-table a { color: var(--accent-2); text-decoration: none; }
+.evidence-table a { color: var(--accent-2); text-decoration: none; overflow-wrap: anywhere; }
 .evidence-table a:hover { text-decoration: underline; }
 .evidence-table.compact { min-width: 560px; }
 .evidence-table.compact td.mono, .evidence-table td.mono { color: var(--fg); }
@@ -178,11 +178,12 @@ code {
 
 .subhead { margin: 34px 0 10px; font-size: 1.15rem; color: var(--fg); }
 
-.formula-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 760px) { .formula-grid { grid-template-columns: 1fr; } }
+.formula-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 760px) { .formula-grid { grid-template-columns: minmax(0, 1fr); } }
 .formula-card {
   background: var(--panel); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 18px;
+  min-width: 0;
 }
 .formula-card h4 { margin: 0 0 10px; font-size: 1rem; color: var(--gold); }
 .formula-card pre {
@@ -195,7 +196,7 @@ code {
 
 .verify-list { margin: 0; padding-inline-start: 22px; }
 .verify-list li { margin-bottom: 8px; color: var(--muted); font-size: 0.93rem; }
-.verify-list a { color: var(--accent-2); text-decoration: none; }
+.verify-list a { color: var(--accent-2); text-decoration: none; overflow-wrap: anywhere; }
 .verify-list a:hover { text-decoration: underline; }
 
 .scope-box {
