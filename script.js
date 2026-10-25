@@ -1,3 +1,5 @@
+import { compute, scenarios } from "./calc.js";
+
 const dict = {
   ar: {
     nav_about: "عن Launchpad",
@@ -11,8 +13,8 @@ const dict = {
     cta_calc: "جرب الحاسبة",
     cta_sources: "المصادر الرسمية",
     about_title: "ما هو Pi Launchpad؟",
-    about_p1: "Pi Launchpad هو تطبيق Pi (Pi App) أُطلق على Testnet (19 مارس 2026) لتنفيذ آلية Design 1 من PiRC. يتيح إطلاق توكنات ecosystem (توكنات الأنظمة) بهدف اكتساب المستخدمين وتفعيل المنتج، وليس لجمع رأس المال.",
-    about_p2: "العائدات (Pi) من إطلاق التوكن تذهب إلى liquidity pool (مجمع سيولة) مع التوكن — لبناء أساس سيولة صحي من البداية. المشاريع يجب أن تكون \"product-first\" (تطبيق يعمل) ليكون للتوكن فائدة فورية.",
+    about_p1: "Pi Launchpad هو تطبيق Pi (Pi App) أُطلق على Testnet (19 مارس 2026) لتنفيذ آلية Design 1 من PiRC. يتيح إطلاق توكنات ecosystem بهدف اكتساب المستخدمين وتفعيل المنتج، وليس لجمع رأس المال.",
+    about_p2: "العائدات (Pi) من إطلاق التوكن تذهب إلى liquidity pool (مجمع سيولة) مع التوكن. المشاريع يجب أن تكون \"product-first\" (تطبيق يعمل) ليكون للتوكن فائدة فورية.",
     about_p3: "Launchpad يدعم نشاط DEX: التوكنات التي تُطلق (مع فائدة وسيولة) تدخل pipeline لـ Pi DEX، لمنع الفيضان بتوكنات عديمة القيمة.",
     about_source: "المصدر: Pi Network Blog — \"Pi Launchpad Released on Testnet\" (19 مارس 2026).",
     benefits_title: "طرق الاستفادة المحتملة",
@@ -139,31 +141,17 @@ function calculate() {
   const fee = num("fee");
   const slippage = num("slippage");
 
-  const cost = piAmount + fee;
-  const grossValue = tokens * tokenPrice;
-  const effectiveSell = sellPrice * (1 - slippage / 100);
-  const revenue = tokens * effectiveSell;
-  const profit = revenue - cost;
-  const pct = cost > 0 ? (profit / cost) * 100 : 0;
-  const breakEven = tokens > 0 ? cost / tokens : 0;
+  const r = compute(piAmount, tokens, tokenPrice, sellPrice, fee, slippage);
+  const sc = scenarios(tokens, sellPrice, slippage, r.cost);
 
-  document.getElementById("rValue").textContent = fmt(grossValue) + " π";
-  document.getElementById("rProfit").textContent = (profit >= 0 ? "+" : "") + fmt(profit) + " π";
-  document.getElementById("rProfit").style.color = profit >= 0 ? "var(--good)" : "var(--bad)";
-  document.getElementById("rPct").textContent = fmt(pct) + " %";
-  document.getElementById("rPct").style.color = pct >= 0 ? "var(--good)" : "var(--bad)";
-  document.getElementById("rBE").textContent = fmt(breakEven);
+  document.getElementById("rValue").textContent = fmt(r.grossValue) + " π";
+  document.getElementById("rProfit").textContent = (r.profit >= 0 ? "+" : "") + fmt(r.profit) + " π";
+  document.getElementById("rProfit").style.color = r.profit >= 0 ? "var(--good)" : "var(--bad)";
+  document.getElementById("rPct").textContent = fmt(r.pct) + " %";
+  document.getElementById("rPct").style.color = r.pct >= 0 ? "var(--good)" : "var(--bad)";
+  document.getElementById("rBE").textContent = fmt(r.breakEven);
 
-  // scenarios
-  function scenario(mult) {
-    const sp = sellPrice * mult * (1 - slippage / 100);
-    const rev = tokens * sp;
-    const p = rev - cost;
-    return p;
-  }
-  const opt = scenario(1.5);
-  const base = scenario(1);
-  const pes = scenario(0.5);
+  const opt = sc.optimistic, base = sc.base, pes = sc.pessimistic;
   document.getElementById("sOpt").textContent = (opt >= 0 ? "+" : "") + fmt(opt) + " π";
   document.getElementById("sBase").textContent = (base >= 0 ? "+" : "") + fmt(base) + " π";
   document.getElementById("sPes").textContent = (pes >= 0 ? "+" : "") + fmt(pes) + " π";
@@ -179,14 +167,12 @@ function drawChart(vals) {
   const ctx = canvas.getContext("2d");
   const w = canvas.width, h = canvas.height;
   ctx.clearRect(0, 0, w, h);
-  const labels = ["Pessimistic", "Base", "Optimistic"];
-  if (currentLang === "ar") labels[0] = "متشائم"; labels[1] = "متوسط"; labels[2] = "متفائل";
+  const labels = currentLang === "ar" ? ["متشائم", "متوسط", "متفائل"] : ["Pessimistic", "Base", "Optimistic"];
   const maxAbs = Math.max(...vals.map((v) => Math.abs(v)), 1);
   const barW = 120;
   const gap = 60;
   const startX = (w - (barW * 3 + gap * 2)) / 2;
   const baseY = h / 2;
-  // axis
   ctx.strokeStyle = "#2a3350";
   ctx.beginPath();
   ctx.moveTo(0, baseY);
@@ -207,14 +193,11 @@ function drawChart(vals) {
 }
 
 document.getElementById("calcBtn").addEventListener("click", calculate);
-
 document.getElementById("langToggle").addEventListener("click", () => {
   applyLang(currentLang === "ar" ? "en" : "ar");
   calculate();
 });
+document.querySelectorAll("input").forEach((inp) => inp.addEventListener("input", calculate));
 
-// init
 applyLang("ar");
 calculate();
-// recalc on input change
-document.querySelectorAll("input").forEach((inp) => inp.addEventListener("input", calculate));
