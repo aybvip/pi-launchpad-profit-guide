@@ -346,11 +346,10 @@ function calculateAllocation() {
   document.getElementById("aEff").textContent = fmt(a.effPrice);
   document.getElementById("aFloor").textContent = fmt(a.floor);
 
-  const tierLabel = dict[currentLang]["tier_" + tier] || tier;
   document.getElementById("allocFormula").textContent = [
     "p_list   = C / T                     = " + fmt(totalPi) + " / " + fmt(purchaseTokens) + " = " + fmt(a.pList),
     "t_base   = c_i / p_list              = " + fmt(myPi) + " / " + fmt(a.pList) + " = " + fmt(a.baseTokens),
-    "t_engage = t_base × bonus (" + tierLabel + ") = " + fmt(a.baseTokens) + " × " + (a.bonus * 100).toFixed(0) + "% = " + fmt(a.engageTokens),
+    "t_engage = t_base × bonus            = " + fmt(a.baseTokens) + " × " + (a.bonus * 100).toFixed(0) + "% = " + fmt(a.engageTokens),
     "p_eff    = c_i / (t_base + t_engage) = " + fmt(myPi) + " / " + fmt(a.totalTokens) + " = " + fmt(a.effPrice),
     "LP share = T / (2.05 × T)            ≈ " + a.lpShare.toFixed(2) + "%",
     "p_floor  = p_list / (2.05)^2         = " + fmt(a.pList) + " / 4.2025 = " + fmt(a.floor)
