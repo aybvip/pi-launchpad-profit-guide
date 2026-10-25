@@ -22,3 +22,19 @@ export function scenarios(tokens, sellPrice, slippage, cost) {
     pessimistic: scenarioProfit(tokens, sellPrice, slippage, cost, 0.5),
   };
 }
+
+// PiRC1 Design 1 allocation model (see docs/METHODOLOGY.md).
+// C = total committed Pi, T = purchase-bucket tokens, c_i = participant commitment.
+// T_purchase = T_liquidity = T, T_engage = 0.05T, so supply = 2.05T and LP share = 1/2.05.
+export function computeAllocation(totalPi, purchaseTokens, myPi, tier = "none") {
+  const pList = purchaseTokens > 0 ? totalPi / purchaseTokens : 0;
+  const bonus = tier === "top" ? 0.1 : tier === "mid" ? 0.05 : 0;
+  const baseTokens = pList > 0 ? myPi / pList : 0;
+  const engageTokens = baseTokens * bonus;
+  const totalTokens = baseTokens + engageTokens;
+  const effPrice = totalTokens > 0 ? myPi / totalTokens : 0;
+  const lpShare = 100 / 2.05;
+  const floor = pList / (2.05 * 2.05);
+  return { pList, bonus, baseTokens, engageTokens, totalTokens, effPrice, lpShare, floor };
+}
+

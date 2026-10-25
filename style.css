@@ -131,3 +131,94 @@ body {
 .site-footer { padding: 30px 0; border-top: 1px solid var(--line); margin-top: 40px; }
 .site-footer p { color: var(--muted); margin: 4px 0; }
 .small { font-size: 0.8rem; }
+
+/* ---- Evidence / proof layer ---- */
+.legend {
+  display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 18px;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 999px; font-size: 0.78rem;
+  font-weight: 600; white-space: nowrap; border: 1px solid transparent;
+}
+.badge.verified { color: #bff3d4; background: rgba(46,204,113,0.12); border-color: rgba(46,204,113,0.45); }
+.badge.derived { color: #cfe2ff; background: rgba(58,160,255,0.12); border-color: rgba(58,160,255,0.45); }
+.badge.assumed { color: #ffe6a6; background: rgba(245,197,66,0.12); border-color: rgba(245,197,66,0.45); }
+
+.table-wrap {
+  overflow-x: auto; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--panel);
+}
+.evidence-table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 0.9rem; }
+.evidence-table th, .evidence-table td {
+  padding: 12px 14px; text-align: start; vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.evidence-table thead th {
+  background: var(--panel-2); color: var(--fg); font-size: 0.85rem;
+  position: sticky; top: 0;
+}
+.evidence-table tbody tr:last-child td { border-bottom: none; }
+.evidence-table tbody tr:hover { background: rgba(124,92,255,0.05); }
+.evidence-table td { color: var(--muted); }
+.evidence-table a { color: var(--accent-2); text-decoration: none; }
+.evidence-table a:hover { text-decoration: underline; }
+.evidence-table.compact { min-width: 560px; }
+.evidence-table.compact td.mono, .evidence-table td.mono { color: var(--fg); }
+
+code, .mono {
+  font-family: "Cascadia Code", "Consolas", ui-monospace, monospace;
+  font-size: 0.86em;
+}
+code {
+  background: var(--panel-2); border: 1px solid var(--line);
+  padding: 1px 6px; border-radius: 6px; color: var(--gold);
+  white-space: nowrap;
+}
+
+.subhead { margin: 34px 0 10px; font-size: 1.15rem; color: var(--fg); }
+
+.formula-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 760px) { .formula-grid { grid-template-columns: 1fr; } }
+.formula-card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px;
+}
+.formula-card h4 { margin: 0 0 10px; font-size: 1rem; color: var(--gold); }
+.formula-card pre {
+  margin: 0 0 10px; padding: 12px; overflow-x: auto;
+  background: #0c1222; border: 1px solid var(--line); border-radius: 10px;
+  color: #dbe6ff; font-family: "Cascadia Code", "Consolas", ui-monospace, monospace;
+  font-size: 0.82rem; line-height: 1.7; direction: ltr; text-align: left;
+}
+.formula-card p { margin: 0; font-size: 0.88rem; }
+
+.verify-list { margin: 0; padding-inline-start: 22px; }
+.verify-list li { margin-bottom: 8px; color: var(--muted); font-size: 0.93rem; }
+.verify-list a { color: var(--accent-2); text-decoration: none; }
+.verify-list a:hover { text-decoration: underline; }
+
+.scope-box {
+  margin-top: 22px; padding: 18px 20px; border-radius: var(--radius);
+  background: rgba(245,197,66,0.06); border: 1px solid rgba(245,197,66,0.3);
+}
+.scope-box h3 { margin: 0 0 8px; font-size: 1rem; color: var(--gold); }
+.scope-box ul { margin: 0; padding-inline-start: 20px; }
+.scope-box li { color: var(--muted); font-size: 0.9rem; margin-bottom: 4px; }
+
+.calc-inputs select {
+  padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--panel-2); color: var(--fg); font-size: 1rem;
+}
+.calc-inputs select:focus { outline: none; border-color: var(--accent); }
+
+.formula-live {
+  margin: 16px 0 0; padding: 12px 14px; border-radius: 10px;
+  background: #0c1222; border: 1px solid var(--line);
+  color: var(--gold); font-size: 0.82rem; overflow-x: auto;
+  direction: ltr; text-align: left; white-space: pre-wrap;
+}
+.alloc-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.copy-status { font-size: 0.85rem; color: var(--good); }
+.copy-status.error { color: var(--bad); }
+

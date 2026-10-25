@@ -17,8 +17,9 @@
       <nav class="nav">
         <a href="#about" data-i18n="nav_about">عن Launchpad</a>
         <a href="#benefits" data-i18n="nav_benefits">طرق الاستفادة</a>
+        <a href="#proof" data-i18n="nav_proof">الإثبات</a>
+        <a href="#allocation" data-i18n="nav_alloc">التخصيص</a>
         <a href="#calculator" data-i18n="nav_calc">الحاسبة</a>
-        <a href="#scenarios" data-i18n="nav_scenarios">السيناريوهات</a>
         <a href="#sources" data-i18n="nav_sources">المصادر</a>
       </nav>
       <button id="langToggle" class="lang-toggle" aria-label="Toggle language">EN</button>
@@ -44,7 +45,7 @@
         <p data-i18n="about_p1">Pi Launchpad هو تطبيق Pi (Pi App) أُطلق على Testnet (19 مارس 2026) لتنفيذ آلية Design 1 من PiRC. يتيح إطلاق توكنات ecosystem (توكنات الأنظمة) بهدف اكتساب المستخدمين وتفعيل المنتج، وليس لجمع رأس المال.</p>
         <p data-i18n="about_p2">العائدات (Pi) من إطلاق التوكن تذهب إلى liquidity pool (مجمع سيولة) مع التوكن — لبناء أساس سيولة صحي من البداية. المشاريع يجب أن تكون "product-first" (تطبيق يعمل) ليكون للتوكن فائدة فورية.</p>
         <p data-i18n="about_p3">Launchpad يدعم نشاط DEX: التوكنات التي تُطلق (مع فائدة وسيولة) تدخل pipeline لـ Pi DEX، لمنع الفيضان بتوكنات عديمة القيمة.</p>
-        <p class="source-line" data-i18n="about_source">المصدر: Pi Network Blog — "Pi Launchpad Released on Testnet" (19 مارس 2026). <a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">رابط</a></p>
+        <p class="source-line"><span data-i18n="about_source">المصدر: Pi Network Blog — "Pi Launchpad Released on Testnet" (19 مارس 2026).</span> <a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">رابط</a></p>
       </div>
     </section>
 
@@ -80,27 +81,244 @@
       </div>
     </section>
 
+    <section id="proof" class="section">
+      <div class="container">
+        <h2 data-i18n="proof_title">الإثبات: ما نعرفه، ومصدره، وكيف تتحقق منه</h2>
+        <p data-i18n="proof_intro">كل ادعاء في هذه الصفحة مصنّف: موثّق رسميًا، أو مشتق رياضيًا من معادلة منشورة، أو افتراض تقديري. لا نطلب منك تصديقنا — يمكنك فتح المصادر وإعادة الحساب بنفسك.</p>
+
+        <div class="legend" aria-label="Evidence legend">
+          <span class="badge verified" data-i18n="badge_verified">✅ موثّق رسميًا</span>
+          <span class="badge derived" data-i18n="badge_derived">🧮 مشتق رياضيًا</span>
+          <span class="badge assumed" data-i18n="badge_assumed">⚠️ افتراض / غير متحقق</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th data-i18n="th_claim">الادعاء</th>
+                <th data-i18n="th_evidence">الدليل / المعادلة</th>
+                <th data-i18n="th_status">الحالة</th>
+                <th data-i18n="th_date">التاريخ / التثبيت</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="p1_claim">أُطلق Launchpad على Testnet في 19 مارس 2026، وينفّذ آلية Design 1 من PiRC.</td>
+                <td><a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">Blog: “Pi Launchpad Released on Testnet”</a></td>
+                <td><span class="badge verified" data-i18n="badge_verified">✅ موثّق رسميًا</span></td>
+                <td class="mono">2026-03-19</td>
+              </tr>
+              <tr>
+                <td data-i18n="p2_claim">النسخة الحالية على Testnet فقط؛ نسخة Mainnet قيد التطوير، وقد «تتغير بسرعة» أثناء الاختبار.</td>
+                <td><a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">Blog: “may iterate and change quickly in the testing phase”</a></td>
+                <td><span class="badge verified" data-i18n="badge_verified">✅ موثّق رسميًا</span></td>
+                <td class="mono">2026-03-19</td>
+              </tr>
+              <tr>
+                <td data-i18n="p3_claim">عائدات Pi من الإطلاق تذهب إلى مجمع سيولة مع التوكن، ولا يأخذها المشروع المُصدِر.</td>
+                <td><a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">Blog: “will go to a liquidity pool with the ecosystem token”</a></td>
+                <td><span class="badge verified" data-i18n="badge_verified">✅ موثّق رسميًا</span></td>
+                <td class="mono">2026-03-19</td>
+              </tr>
+              <tr>
+                <td data-i18n="p4_claim">التوكنات مخصّصة لاكتساب المستخدمين والمنفعة داخل المنتج، وليس لجمع رأس المال.</td>
+                <td><a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">Blog: “rather than serving primarily to raise capital”</a></td>
+                <td><span class="badge verified" data-i18n="badge_verified">✅ موثّق رسميًا</span></td>
+                <td class="mono">2026-03-19</td>
+              </tr>
+              <tr>
+                <td data-i18n="p5_claim">المشاريع المشاركة يجب أن تكون “product-first”: تطبيق يعمل يمنح التوكن فائدة فورية.</td>
+                <td><a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">Blog: “Projects launching through the Pi Launchpad are expected to be product-first”</a></td>
+                <td><span class="badge verified" data-i18n="badge_verified">✅ موثّق رسميًا</span></td>
+                <td class="mono">2026-03-19</td>
+              </tr>
+              <tr>
+                <td><span data-i18n="p6_claim">سعر الإدراج = إجمالي Pi الملتزم ÷ توكنات bucket الشراء.</span> <code>p_list = C / T</code></td>
+                <td><a href="https://github.com/PiNetwork/PiRC/blob/c50d516/PiRC1/4-allocation/4-allocation%20design%201.md" target="_blank" rel="noopener">PiRC1 §4.1 — Allocation</a></td>
+                <td><span class="badge derived" data-i18n="badge_derived">🧮 مشتق رياضيًا</span></td>
+                <td class="mono">c50d516 · 2026-02-20</td>
+              </tr>
+              <tr>
+                <td><span data-i18n="p7_claim">حصة المشارك الأساسية تُحسب بسعر الإدراج نفسه.</span> <code>t_i(base) = c_i / p_list</code></td>
+                <td><a href="https://github.com/PiNetwork/PiRC/blob/c50d516/PiRC1/4-allocation/4-allocation%20design%201.md" target="_blank" rel="noopener">PiRC1 §4.1 — base tokens</a></td>
+                <td><span class="badge derived" data-i18n="badge_derived">🧮 مشتق رياضيًا</span></td>
+                <td class="mono">c50d516 · 2026-02-20</td>
+              </tr>
+              <tr>
+                <td><span data-i18n="p8_claim">حجما الشراء والسيولة متساويان، ومكافأة التفاعل 5% من T؛ فالعرض الابتدائي 2.05T وحصة المجمع ≈48.7%.</span> <code>T_purchase = T_liquidity = T</code>؛ <code>T_engage = 0.05T</code></td>
+                <td><a href="https://github.com/PiNetwork/PiRC/blob/c50d516/PiRC1/5-tge-state/5-tge-state%20design%201.md" target="_blank" rel="noopener">PiRC1 §5 — LP at TGE</a></td>
+                <td><span class="badge derived" data-i18n="badge_derived">🧮 مشتق رياضيًا</span></td>
+                <td class="mono">c50d516 · 2026-02-20</td>
+              </tr>
+              <tr>
+                <td data-i18n="p9_claim">محفظة Escrow التي تُهيّئ المجمع تُقفل نهائيًا؛ لا يستطيع فريق المشروع سحب السيولة الابتدائية.</td>
+                <td><a href="https://github.com/PiNetwork/PiRC/blob/c50d516/PiRC1/5-tge-state/5-tge-state%20design%201.md" target="_blank" rel="noopener">PiRC1 §5: “No project team can drain liquidity”</a></td>
+                <td><span class="badge verified" data-i18n="badge_verified">✅ موثّق رسميًا</span></td>
+                <td class="mono">c50d516 · 2026-02-20</td>
+              </tr>
+              <tr>
+                <td><span data-i18n="p10_claim">الحد النظري الأدنى لسعر المجمع ≈ 0.238 × سعر الإدراج، بافتراض بيع كل التوكنات وبدون رسوم.</span> <code>p_floor = p_list / (2 + 0.05)²</code></td>
+                <td><a href="https://github.com/PiNetwork/PiRC/blob/c50d516/PiRC1/5-tge-state/5-tge-state%20design%201.md" target="_blank" rel="noopener">PiRC1 §5 — lower bound derivation</a></td>
+                <td><span class="badge derived" data-i18n="badge_derived">🧮 مشتق رياضيًا</span></td>
+                <td class="mono">c50d516 · 2026-02-20</td>
+              </tr>
+              <tr>
+                <td data-i18n="p11_claim">سعر البيع الفعلي، وعمق السيولة، وإمكانية البيع بتوكن معيّن: غير معروفة مسبقًا، ولا ندّعي معرفتها.</td>
+                <td data-i18n="p11_evidence">لا يوجد في المصادر الرسمية سعر أو ضمان سيولة لتوكن بعينه؛ المتغيرات تُدخَل يدويًا في الحاسبة.</td>
+                <td><span class="badge assumed" data-i18n="badge_assumed">⚠️ افتراض / غير متحقق</span></td>
+                <td class="mono">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="subhead" data-i18n="method_title">المنهجية: المعادلات المستخدمة (بدون صندوق أسود)</h3>
+        <div class="formula-grid">
+          <div class="formula-card">
+            <h4 data-i18n="fm_alloc_t">تخصيص Design 1 — من PiRC1</h4>
+            <pre>p_list  = C / T
+t_base  = c_i / p_list
+p_eff   = c_i / (t_base + t_engage)
+supply  = 2.05 · T
+LP share = T / (2.05 · T) ≈ 48.78%
+p_floor = p_list / (2 + 0.05)² ≈ 0.238 · p_list</pre>
+            <p data-i18n="fm_alloc_p">C = إجمالي Pi الملتزم، T = توكنات bucket الشراء، c_i = التزامك. p_eff تنطبق فقط عند وجود مكافأة تفاعل.</p>
+          </div>
+          <div class="formula-card">
+            <h4 data-i18n="fm_calc_t">حاسبة الربح/الخسارة — هذه الصفحة</h4>
+            <pre>cost           = pi + fee
+effective_sell = sell × (1 − slippage/100)
+revenue        = tokens × effective_sell
+profit         = revenue − cost
+pct            = profit / cost × 100
+break_even     = cost / tokens</pre>
+            <p data-i18n="fm_calc_p">المعادلات نفسها موجودة في calc.js، وتُختبر آليًا في CI عند كل push.</p>
+          </div>
+        </div>
+
+        <h3 class="subhead" data-i18n="tv_title">مثال اختبار قابل للتحقق يدويًا</h3>
+        <p data-i18n="tv_intro">نفس الأرقام موجودة في tests/calc.test.mjs. أعد الحساب بآلة حاسبة عادية:</p>
+        <div class="table-wrap">
+          <table class="evidence-table compact">
+            <thead>
+              <tr>
+                <th data-i18n="tv_case">الحالة</th>
+                <th data-i18n="tv_input">المدخلات</th>
+                <th data-i18n="tv_expected">النتيجة المتوقعة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="tv_alloc_case">تخصيص Design 1</td>
+                <td class="mono">C=100,000 · T=1,000,000 · c_i=500</td>
+                <td class="mono">p_list=0.1 · t_base=5,000 · floor=0.023795</td>
+              </tr>
+              <tr>
+                <td data-i18n="tv_profit_case">ربح/خسارة</td>
+                <td class="mono">pi=100 · fee=1 · tokens=500 · sell=0.3 · slip=2%</td>
+                <td class="mono">cost=101 · revenue=147 · profit=+46 · +45.54%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="subhead" data-i18n="verify_title">تحقّق بنفسك (٥ دقائق)</h3>
+        <ol class="verify-list">
+          <li><span data-i18n="v1">افتح المنشور الرسمي وتأكد من العنوان والتاريخ:</span> <a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">minepi.com/blog/pi-launchpad</a></li>
+          <li><span data-i18n="v2">افتح PiRC1 عند التثبيت c50d516 واقرأ §4.1 و§5:</span> <a href="https://github.com/PiNetwork/PiRC/tree/c50d516/PiRC1" target="_blank" rel="noopener">github.com/PiNetwork/PiRC @ c50d516</a></li>
+          <li><span data-i18n="v3">أعد الحساب: 100,000 ÷ 1,000,000 = 0.1، ثم 500 ÷ 0.1 = 5,000، ثم 0.1 ÷ (2.05)² = 0.023795.</span></li>
+          <li><span data-i18n="v4">شغّل الاختبارات محليًا لمطابقة الأرقام:</span> <code>npm test</code></li>
+          <li><span data-i18n="v5">انسخ «تقرير الإثبات» من مدقّق التخصيص واحتفظ بالمدخلات والتاريخ والروابط.</span></li>
+        </ol>
+
+        <div class="scope-box">
+          <h3 data-i18n="scope_title">ما لا تدّعيه هذه الصفحة</h3>
+          <ul>
+            <li data-i18n="scope1">لا تتنبأ بسعر أي توكن ولا تضمن ربحًا.</li>
+            <li data-i18n="scope2">ليست تدقيقًا مستقلًا لشبكة Pi أو لأي مشروع.</li>
+            <li data-i18n="scope3">لا تعرض بيانات حية؛ كل الأسعار في الحاسبة مدخلات يدوية.</li>
+            <li data-i18n="scope4">الحد النظري 0.238 يتجاهل الرسوم والإصدار الإضافي للمعروض ويصف فقط الحالة النظرية القصوى.</li>
+            <li data-i18n="scope5">ليست نصيحة مالية، ولا تطلب عبارة استرداد أو مفاتيح خاصة.</li>
+          </ul>
+          <p class="source-line" data-i18n="proof_log">سجل التحقق: جُلب المنشور الرسمي وPiRC1 في 2026-10-25. PiRC1 مثبّت عند c50d516 (2026-02-20). أي تغيير لاحق في المصدر قد يغيّر النتائج.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="allocation" class="section">
+      <div class="container">
+        <h2 data-i18n="alloc_title">مدقّق تخصيص Design 1</h2>
+        <p data-i18n="alloc_intro">أعِد إنتاج معادلات PiRC1 بنفسك. هذه ليست بيانات حية — إنها آلة حاسبة تعليمية للمعادلة المنشورة، مع إظهار التعويض خطوة بخطوة.</p>
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <label><span data-i18n="lbl_total_pi">إجمالي Pi الملتزم C</span>
+              <input type="number" id="totalPi" value="100000" min="0" step="1" />
+            </label>
+            <label><span data-i18n="lbl_purchase_tokens">توكنات bucket الشراء T</span>
+              <input type="number" id="purchaseTokens" value="1000000" min="0" step="1" />
+            </label>
+            <label><span data-i18n="lbl_my_pi">التزامك الشخصي c_i</span>
+              <input type="number" id="myPi" value="500" min="0" step="1" />
+            </label>
+            <label><span data-i18n="lbl_tier">فئة التفاعل (اختياري)</span>
+              <select id="tier">
+                <option value="none" data-i18n="tier_none">بدون مكافأة (0%)</option>
+                <option value="mid" data-i18n="tier_mid">متوسطة (≈5%)</option>
+                <option value="top" data-i18n="tier_top">عالية (≈10%)</option>
+              </select>
+            </label>
+            <button id="allocBtn" class="btn primary" data-i18n="btn_alloc">احسب التخصيص</button>
+          </div>
+          <div class="calc-results">
+            <div class="result-card">
+              <span data-i18n="a_price">سعر الإدراج p_list (Pi/توكن)</span>
+              <strong id="aPrice">—</strong>
+            </div>
+            <div class="result-card">
+              <span data-i18n="a_tokens">توكناتك الأساسية t_base</span>
+              <strong id="aTokens">—</strong>
+            </div>
+            <div class="result-card">
+              <span data-i18n="a_eff">سعرك الفعلي p_eff (Pi/توكن)</span>
+              <strong id="aEff">—</strong>
+            </div>
+            <div class="result-card">
+              <span data-i18n="a_floor">الحد النظري الأدنى p_floor</span>
+              <strong id="aFloor">—</strong>
+            </div>
+          </div>
+        </div>
+        <p class="formula-live mono" id="allocFormula">—</p>
+        <div class="alloc-actions">
+          <button id="copyReport" class="btn ghost" data-i18n="btn_copy">انسخ تقرير الإثبات</button>
+          <span id="copyStatus" class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+        <p class="note" data-i18n="alloc_note">مكافأة التفاعل المعروضة (0% / 5% / 10%) هي متوسط PiRC1 بافتراض توزيع الالتزامات بالتساوي بين الفئات — وهو افتراض موضّح، وليس وعدًا. راجع §4.1 للمعادلة الدقيقة.</p>
+      </div>
+    </section>
+
     <section id="calculator" class="section">
       <div class="container">
         <h2 data-i18n="calc_title">حاسبة الربح / الخسارة</h2>
         <div class="calc-grid">
           <div class="calc-inputs">
-            <label data-i18n="lbl_pi">مقدار Pi للمشاركة
+            <label><span data-i18n="lbl_pi">مقدار Pi للمشاركة</span>
               <input type="number" id="piAmount" value="100" min="0" step="0.01" />
             </label>
-            <label data-i18n="lbl_tokens">عدد التوكنات المتوقعة
+            <label><span data-i18n="lbl_tokens">عدد التوكنات المتوقعة</span>
               <input type="number" id="tokens" value="500" min="0" step="1" />
             </label>
-            <label data-i18n="lbl_price">سعر التوكن المفترض (Pi/توكن)
+            <label><span data-i18n="lbl_price">سعر التوكن المفترض (Pi/توكن)</span>
               <input type="number" id="tokenPrice" value="0.2" min="0" step="0.0001" />
             </label>
-            <label data-i18n="lbl_sell">سعر البيع المحتمل (Pi/توكن)
+            <label><span data-i18n="lbl_sell">سعر البيع المحتمل (Pi/توكن)</span>
               <input type="number" id="sellPrice" value="0.3" min="0" step="0.0001" />
             </label>
-            <label data-i18n="lbl_fee">الرسوم (Pi)
+            <label><span data-i18n="lbl_fee">الرسوم (Pi)</span>
               <input type="number" id="fee" value="1" min="0" step="0.01" />
             </label>
-            <label data-i18n="lbl_slip">الانزلاق السعري (%)
+            <label><span data-i18n="lbl_slip">الانزلاق السعري (%)</span>
               <input type="number" id="slippage" value="2" min="0" step="0.1" />
             </label>
             <button id="calcBtn" class="btn primary" data-i18n="btn_calc">احسب</button>
@@ -158,11 +376,11 @@
         <ul class="sources-list">
           <li>Pi Network — Pi Launchpad Released on Testnet (19 Mar 2026): <a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">minepi.com/blog/pi-launchpad</a></li>
           <li>Pi Network — Pi Day 2026 announcement: <a href="https://minepi.com/blog/pi-day-2026/" target="_blank" rel="noopener">minepi.com/blog/pi-day-2026</a></li>
+          <li>PiRC1 — Ecosystem Token Design, Design 1 (pinned <code>c50d516</code>, 2026-02-20): <a href="https://github.com/PiNetwork/PiRC/tree/c50d516/PiRC1" target="_blank" rel="noopener">github.com/PiNetwork/PiRC</a></li>
           <li>Pi Network developers: <a href="https://developers.minepi.com/" target="_blank" rel="noopener">developers.minepi.com</a></li>
-          <li>PiRC (design proposal): <a href="https://github.com/PiNetwork/PiRC" target="_blank" rel="noopener">github.com/PiNetwork/PiRC</a></li>
           <li>Pi Core Team on X: <a href="https://x.com/PiCoreTeam" target="_blank" rel="noopener">@PiCoreTeam</a></li>
         </ul>
-        <p class="source-line" data-i18n="src_note">آخر تحديث للمعلومات: 19 مارس 2026 (Pi Launchpad Testnet). Launchpad قد يتغير بسرعة أثناء الاختبار.</p>
+        <p class="source-line" data-i18n="src_note">آخر تحديث للمعلومات: 19 مارس 2026 (Pi Launchpad Testnet). آخر تحقق من الروابط: 2026-10-25. Launchpad قد يتغير بسرعة أثناء الاختبار.</p>
       </div>
     </section>
   </main>
