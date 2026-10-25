@@ -287,7 +287,11 @@ function applyLang(lang) {
     const key = el.getAttribute("data-i18n");
     if (d[key] !== undefined) el.textContent = d[key];
   });
-  document.getElementById("langToggle").textContent = lang === "ar" ? "EN" : "AR";
+  const langBtn = document.getElementById("langToggle");
+  langBtn.textContent = lang === "ar" ? "EN" : "AR";
+  // Keep the visible text inside the accessible name (Lighthouse label-content-name-mismatch).
+  langBtn.setAttribute("aria-label", lang === "ar" ? "EN — التبديل إلى الإنجليزية" : "AR — Switch to Arabic");
+  langBtn.setAttribute("title", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
   document.title = lang === "ar"
     ? "Pi Launchpad Profit Guide — حاسبة وتوثيق"
     : "Pi Launchpad Profit Guide — calculator and evidence";

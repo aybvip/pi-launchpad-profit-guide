@@ -99,6 +99,8 @@ test("language toggle keeps inputs alive and switches direction", async () => {
   assert.equal(document.documentElement.lang, "en");
   assert.equal(document.documentElement.dir, "ltr");
   assert.equal(document.getElementById("langToggle").textContent, "AR");
+  const enBtn = document.getElementById("langToggle");
+  assert.ok(enBtn.getAttribute("aria-label").includes(enBtn.textContent), "accessible name must include visible text");
   assert.equal(document.querySelector("#calculator .calc-inputs label span").textContent, "Pi amount to participate");
   assert.equal(document.querySelectorAll(".calc-inputs input").length, 9);
   assert.equal(document.getElementById("rProfit").textContent, "+46 π");
@@ -107,6 +109,9 @@ test("language toggle keeps inputs alive and switches direction", async () => {
   dom.window.eval("applyLang('ar')");
   assert.equal(document.documentElement.dir, "rtl");
   assert.equal(document.querySelectorAll(".calc-inputs input").length, 9);
+  const arBtn = document.getElementById("langToggle");
+  assert.equal(arBtn.textContent, "EN");
+  assert.ok(arBtn.getAttribute("aria-label").includes("EN"));
   dom.window.close();
 });
 
