@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pi Launchpad Profit Guide</title>
+  <meta name="description" content="Guide and interactive calculator for understanding Pi Network Launchpad participation and potential profit/loss. Estimates only." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="pi-mark">π</span>
+        <span class="brand-text">Pi Launchpad Profit Guide</span>
+      </div>
+      <nav class="nav">
+        <a href="#about" data-i18n="nav_about">عن Launchpad</a>
+        <a href="#benefits" data-i18n="nav_benefits">طرق الاستفادة</a>
+        <a href="#calculator" data-i18n="nav_calc">الحاسبة</a>
+        <a href="#scenarios" data-i18n="nav_scenarios">السيناريوهات</a>
+        <a href="#sources" data-i18n="nav_sources">المصادر</a>
+      </nav>
+      <button id="langToggle" class="lang-toggle" aria-label="Toggle language">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 data-i18n="hero_title">Pi Launchpad Profit Guide</h1>
+        <p class="hero-sub" data-i18n="hero_sub">فهم كيفية الاستفادة من Launchpad وتحليل فرص الربح المحتملة — بناءً على معلومات موثوقة.</p>
+        <p class="disclaimer" data-i18n="hero_disclaimer">⚠️ النتائج تقديرية وليست ضمانًا للربح. Launchpad على Testnet حالياً؛ Mainnet قيد التطوير.</p>
+        <div class="hero-cta">
+          <a href="#calculator" class="btn primary" data-i18n="cta_calc">جرب الحاسبة</a>
+          <a href="#sources" class="btn ghost" data-i18n="cta_sources">المصادر الرسمية</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 data-i18n="about_title">ما هو Pi Launchpad؟</h2>
+        <p data-i18n="about_p1">Pi Launchpad هو تطبيق Pi (Pi App) أُطلق على Testnet (19 مارس 2026) لتنفيذ آلية Design 1 من PiRC. يتيح إطلاق توكنات ecosystem (توكنات الأنظمة) بهدف اكتساب المستخدمين وتفعيل المنتج، وليس لجمع رأس المال.</p>
+        <p data-i18n="about_p2">العائدات (Pi) من إطلاق التوكن تذهب إلى liquidity pool (مجمع سيولة) مع التوكن — لبناء أساس سيولة صحي من البداية. المشاريع يجب أن تكون "product-first" (تطبيق يعمل) ليكون للتوكن فائدة فورية.</p>
+        <p data-i18n="about_p3">Launchpad يدعم نشاط DEX: التوكنات التي تُطلق (مع فائدة وسيولة) تدخل pipeline لـ Pi DEX، لمنع الفيضان بتوكنات عديمة القيمة.</p>
+        <p class="source-line" data-i18n="about_source">المصدر: Pi Network Blog — "Pi Launchpad Released on Testnet" (19 مارس 2026). <a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">رابط</a></p>
+      </div>
+    </section>
+
+    <section id="benefits" class="section">
+      <div class="container">
+        <h2 data-i18n="benefits_title">طرق الاستفادة المحتملة</h2>
+        <div class="cards">
+          <div class="card">
+            <h3 data-i18n="b1_t">المشاركة في إطلاق توكن</h3>
+            <p data-i18n="b1_p">المشاركة (commitment) في مشاريع product-first. الوصول للتوكنات عبر آليات Launchpad.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="b2_t">فهم آلية التخصيص</h3>
+            <p data-i18n="b2_p">دراسة قواعد Launchpad (PiRC) لفهم كيف يُقسّم التوزيع.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="b3_t">دراسة السعر والسيولة</h3>
+            <p data-i18n="b3_p">تقييم التوكن (utility + liquidity pool) قبل المشاركة.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="b4_t">حساب التكاليف والتعادل</h3>
+            <p data-i18n="b4_p">استخدام الحاسبة أدناه لحساب break-even وprofit/loss.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="b5_t">شروط الحجز وفترات الانتظار</h3>
+            <p data-i18n="b5_p">فهم lockups/vesting (إن وُجدت) وإمكانية البيع. Testnet ≠ Mainnet.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="b6_t">Testnet vs Mainnet</h3>
+            <p data-i18n="b6_p">التوكنات على Testnet تجريبية (للتعلم). Mainnet قيد التطوير. لا تخلط بينهما.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section">
+      <div class="container">
+        <h2 data-i18n="calc_title">حاسبة الربح / الخسارة</h2>
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <label data-i18n="lbl_pi">مقدار Pi للمشاركة
+              <input type="number" id="piAmount" value="100" min="0" step="0.01" />
+            </label>
+            <label data-i18n="lbl_tokens">عدد التوكنات المتوقعة
+              <input type="number" id="tokens" value="500" min="0" step="1" />
+            </label>
+            <label data-i18n="lbl_price">سعر التوكن المفترض (Pi/توكن)
+              <input type="number" id="tokenPrice" value="0.2" min="0" step="0.0001" />
+            </label>
+            <label data-i18n="lbl_sell">سعر البيع المحتمل (Pi/توكن)
+              <input type="number" id="sellPrice" value="0.3" min="0" step="0.0001" />
+            </label>
+            <label data-i18n="lbl_fee">الرسوم (Pi)
+              <input type="number" id="fee" value="1" min="0" step="0.01" />
+            </label>
+            <label data-i18n="lbl_slip">الانزلاق السعري (%)
+              <input type="number" id="slippage" value="2" min="0" step="0.1" />
+            </label>
+            <button id="calcBtn" class="btn primary" data-i18n="btn_calc">احسب</button>
+          </div>
+          <div class="calc-results" id="results">
+            <div class="result-card">
+              <span data-i18n="res_value">قيمة التوكنات</span>
+              <strong id="rValue">—</strong>
+            </div>
+            <div class="result-card">
+              <span data-i18n="res_profit">الربح/الخسارة</span>
+              <strong id="rProfit">—</strong>
+            </div>
+            <div class="result-card">
+              <span data-i18n="res_pct">النسبة</span>
+              <strong id="rPct">—</strong>
+            </div>
+            <div class="result-card">
+              <span data-i18n="res_be">سعر التعادل (Pi/توكن)</span>
+              <strong id="rBE">—</strong>
+            </div>
+          </div>
+        </div>
+        <p class="note" data-i18n="calc_note">النتائج تقديرية. السعر النظري لا يعني إمكانية بيع التوكنات فعليًا بذلك السعر. لا توجد ضمانات ربح.</p>
+      </div>
+    </section>
+
+    <section id="scenarios" class="section">
+      <div class="container">
+        <h2 data-i18n="scen_title">ثلاثة سيناريوهات</h2>
+        <div class="scen-grid">
+          <div class="scen-card optimistic">
+            <h3 data-i18n="scen_opt">متفائل</h3>
+            <p data-i18n="scen_opt_p">سعر بيع ×1.5</p>
+            <strong id="sOpt">—</strong>
+          </div>
+          <div class="scen-card base">
+            <h3 data-i18n="scen_base">متوسط</h3>
+            <p data-i18n="scen_base_p">سعر بيع كما أدخلته</p>
+            <strong id="sBase">—</strong>
+          </div>
+          <div class="scen-card pessimistic">
+            <h3 data-i18n="scen_pes">متشائم</h3>
+            <p data-i18n="scen_pes_p">سعر بيع ×0.5</p>
+            <strong id="sPes">—</strong>
+          </div>
+        </div>
+        <canvas id="chart" width="600" height="220" aria-label="Profit chart"></canvas>
+      </div>
+    </section>
+
+    <section id="sources" class="section">
+      <div class="container">
+        <h2 data-i18n="src_title">المصادر الرسمية</h2>
+        <ul class="sources-list">
+          <li>Pi Network — Pi Launchpad Released on Testnet (19 Mar 2026): <a href="https://minepi.com/blog/pi-launchpad/" target="_blank" rel="noopener">minepi.com/blog/pi-launchpad</a></li>
+          <li>Pi Network — Pi Day 2026 announcement: <a href="https://minepi.com/blog/pi-day-2026/" target="_blank" rel="noopener">minepi.com/blog/pi-day-2026</a></li>
+          <li>Pi Network developers: <a href="https://developers.minepi.com/" target="_blank" rel="noopener">developers.minepi.com</a></li>
+          <li>PiRC (design proposal): <a href="https://github.com/PiNetwork/PiRC" target="_blank" rel="noopener">github.com/PiNetwork/PiRC</a></li>
+          <li>Pi Core Team on X: <a href="https://x.com/PiCoreTeam" target="_blank" rel="noopener">@PiCoreTeam</a></li>
+        </ul>
+        <p class="source-line" data-i18n="src_note">آخر تحديث للمعلومات: 19 مارس 2026 (Pi Launchpad Testnet). Launchpad قد يتغير بسرعة أثناء الاختبار.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footer_p">Pi Launchpad Profit Guide — أداة تعليمية. ليست نصيحة مالية. لا تطلب عبارة استرداد ٢٤ كلمة أو مفاتيح خاصة. لا معاملات تلقائية.</p>
+      <p class="small">© 2026 — MIT License</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
